@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Switch } from 'react-native';
 
 export default function App() {
   return (
@@ -11,6 +12,10 @@ export default function App() {
         <TouchableOpacity style={styles.buttonentrar}>
           <Text style={[{color:'#FFFFFF', fontSize: 15,}]}>Entrar</Text>
         </TouchableOpacity>
+        <View>
+        <Switch></Switch>
+        <Text>Lembre-se de mim</Text>
+        </View>
       </View>
     </View>
   );
@@ -30,7 +35,7 @@ const styles = StyleSheet.create({
   },
   entrar:{
     color: "#FFFFFF",
-    fontSize: 15,
+    fontSize: 18,
   },
   login: {
     color: "#FFFFFF",
@@ -45,6 +50,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 4,
     height: 40,
-
   },
 });
