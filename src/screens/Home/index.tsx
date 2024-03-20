@@ -1,63 +1,88 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Switch, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground,} from 'react-native';
 
 
-export default function App() {
+export default function Home() {
   return (
     <View style={styles.container}>
-      <Image style={styles.logoinicial} source={require('./src/assets/logo.png')}/>
-      <View style={styles.container01}>
-        <Text style={styles.entrar}>Entrar</Text>
-        <TextInput placeholder='Email ou número de telefone' style={styles.login} placeholderTextColor={"#9C9C9C"}/>
-        <TextInput placeholder='Senha' style={styles.login} placeholderTextColor={"#9C9C9C"}/>
-        <TouchableOpacity style={styles.buttonentrar}>
-          <Text style={[{color:'#FFFFFF', fontSize: 15,}]}>Entrar</Text>
-        </TouchableOpacity>
-        <View>
-        <Switch></Switch>
-        <Text>Lembre-se de mim</Text>
-        </View>
-      </View>
+          <ImageBackground style={styles.imagebackground} source={require('../../assets/image 7.png')} resizeMethod='resize' resizeMode='cover'>
+            <View style={styles.header}>
+              <View style={[styles.headergroupbuttos, {alignItems:'flex-start'}]}>
+              <TouchableOpacity>
+               <Image style={styles.headerButtonlogo} resizeMethod='resize' resizeMode='contain' source={require('../../assets/image 8.png')}/>
+              </TouchableOpacity>
+            </View>
+              <View style={[styles.headergroupbuttos, {alignItems:'center', flexDirection:'row', justifyContent:'flex-end'}]}>
+                <TouchableOpacity>  
+                  <Image style={styles.headerButton} resizeMethod='resize' resizeMode='contain' source={require('../../assets/Vector.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Image style={styles.headerButton} resizeMethod='resize' resizeMode='contain' source={require('../../assets/Rectangle 5.png')}/>
+                </TouchableOpacity>
+            </View>
+          </View>
+            <View style={styles.boxtitles} >
+              <TouchableOpacity>
+              <Text style={styles.headertitles}>Séries</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+              <Text style={styles.headertitles}>Filmes</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+              <Text style={styles.headertitles}>Categorias</Text>
+              </TouchableOpacity>
+          </View>
+            </ImageBackground>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000000',
-    alignItems: 'center',
-    justifyContent: 'center',
     gap: 25,
+    paddingTop: 25,
   },
-  logoinicial: {
-    borderColor: "red",
-    justifyContent: 'center',
-    alignItems: 'center',
-
+  header: {
+    flexDirection:'row',
+    paddingTop: 20,
+    backgroundColor:"rgba(0,0,0,0.6)"
   },
-  container01: {
+  headergroupbuttos: {
+    flex: 1,
     gap: 10,
-    width: "100%",
-    padding: 30,
+    paddingHorizontal: 10,
   },
-  entrar:{
-    color: "#FFFFFF",
-    fontSize: 18,
-  },
-  login: {
-    color: "#FFFFFF",
-    backgroundColor: "#333333",
-    padding: 10,
-    fontSize: 15,
-    borderRadius: 4,
-  },
-  buttonentrar: {
-    backgroundColor:"#E50914",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 4,
+  headerButtonlogo: {
+    width: 30,
     height: 40,
   },
-});
+  headerButton: {
+    width: 20,
+    height: 20,
+  },
+  headertitles: {
+  flexDirection: 'row',
+  paddingHorizontal: 10,
+  color: '#FFFFFF',
+  fontSize: 10,
+  },
+  imagebackground: {
+    flex: 1,
+    height: "70%",
+  },
+  boxtitles: {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    paddingHorizontal: 50,
+    paddingTop: 25,
+    backgroundColor:"rgba(0,0,0,0.6)",
+    height: 60,
+    alignItems: "center",
+  },
+  });  
+
+ 
+  
+  
