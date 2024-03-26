@@ -33,6 +33,9 @@ export default function Home() {
               <Text style={styles.headertitles}>Categorias</Text>
               </TouchableOpacity>
           </View>
+          <View style={[{paddingVertical:385, alignItems:'center',}]}>
+            <Text style={styles.titlebaseboard}>Suspense no ar · Detetive amadores</Text>
+          </View>
             </ImageBackground>
     </View>
   );
@@ -80,6 +83,10 @@ const styles = StyleSheet.create({
     backgroundColor:"rgba(0,0,0,0.6)",
     height: 60,
     alignItems: "center",
+  },
+  titlebaseboard: {
+    color: '#FFFFFF',
+    fontSize: 10,
   },
   });  
 
