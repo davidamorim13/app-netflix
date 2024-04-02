@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground,} from
 export default function Home() {
   return (
     <View style={styles.container}>
-          <ImageBackground style={styles.imagebackground} source={require('../../assets/image 7.png')} resizeMethod='resize' resizeMode='cover'>
+          <ImageBackground style={styles.imagebackground} source={require('../../assets/image 7.png')} resizeMethod='resize' resizeMode="cover">
             <View style={styles.header}>
               <View style={[styles.headergroupbuttos, {alignItems:'flex-start'}]}>
               <TouchableOpacity>
@@ -33,13 +33,31 @@ export default function Home() {
               <Text style={styles.headertitles}>Categorias</Text>
               </TouchableOpacity>
           </View>
-          <View style={[{paddingVertical:385, alignItems:'center',}]}>
+          <View style={[{paddingVertical:210, alignItems:'center',}]}>
             <Text style={styles.titlebaseboard}>Suspense no ar · Detetive amadores</Text>
           </View>
-            </ImageBackground>
+        </ImageBackground>
+
+        <View style={styles.movieList}>
+          <View style={styles.groupbuttonplay}>
+          <TouchableOpacity style={styles.buttonmoreoptions}>
+            <Image source={require('../../assets/Vectormais.png')}/>
+            <Text style={styles.buttonMoreOptionsText}>Assistir</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonPlay}>
+          <Image source={require('../../assets/Vectorplay.png')}/>
+            <Text style={styles.buttonPlayText}>Assistir</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonmoreoptions}>
+          <Image source={require('../../assets/VectorI.png')}/>
+            <Text style={styles.buttonMoreOptionsText}>Saiba mais</Text>
+          </TouchableOpacity>
+          </View>
+          </View>
     </View>
   );
-}
+} 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,7 +68,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection:'row',
     paddingTop: 20,
-    backgroundColor:"rgba(0,0,0,0.6)"
+    backgroundColor:"rgba(0,0,0,0.6)",
   },
   headergroupbuttos: {
     flex: 1,
@@ -72,8 +90,7 @@ const styles = StyleSheet.create({
   fontSize: 10,
   },
   imagebackground: {
-    flex: 1,
-    height: "70%",
+    height: 450,
   },
   boxtitles: {
     justifyContent: "space-between",
@@ -87,6 +104,36 @@ const styles = StyleSheet.create({
   titlebaseboard: {
     color: '#FFFFFF',
     fontSize: 10,
+  },
+  movieList: {
+    height:250,
+  },
+  groupbuttonplay: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+  },
+  buttonmoreoptions:{
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonMoreOptionsText:{
+    color: "#FFFFFF"
+  },
+
+  buttonPlay: {
+    backgroundColor: "#FFFFFF",
+    paddingVertical:8,
+    paddingHorizontal: 12,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    gap: 10,
+  },
+  buttonPlayText: {
   },
   });  
 
